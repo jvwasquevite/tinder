@@ -3,9 +3,14 @@ import { ListTinderUsersService } from '../services/ListTinderUsersService'
 
 class ListTinderUsersController {
   async handle(request: Request, response: Response) {
-    const listTinderUsersService = new ListTinderUsersService()
+    const { gender, status, orientation } = request.query as any
 
-    const users = await listTinderUsersService.execute()
+    const listTinderUsersService = new ListTinderUsersService()
+    const users = await listTinderUsersService.execute({
+      gender,
+      status,
+      orientation,
+    })
 
     return response.json(users)
   }
