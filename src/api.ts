@@ -49,10 +49,6 @@ export async function API() {
       } else {
         user.orientacao_sexual.value = 'Gay'
       }
-
-      // if (user.lote !== undefined) {
-      //   user.lote.value = user.lote.value.slice(2, 4)
-      // }
     })
 
     return data
