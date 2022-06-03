@@ -26,7 +26,7 @@ class SendLikeService {
     }
 
     const email = {
-      html: `<p>Olá, <b>${to_user[0].firstname.value}</b>!</p><p>Aqui é a Sonza passando para avisar que você acabou de receber um like de <b>${from_user[0].firstname.value}</b> no Tinder dos <b>#MeusDoce22</b>! ✨</p><p>Para entrar em contato, <a href="https://www.instagram.com/${from_user[0].instagram.value}" target="_blank"><b>clique aqui</b></a> para acessar seu <b>Instagram</b> ou envie uma mensagem via <b>Whatsapp</b> <a href="https://api.whatsapp.com/send/?phone=55${from_user[0].phone.value}" target="_blank"><b>clicando aqui</b></a>.</p><p>Para participar também, <a href="https://jvwasquevite.com/doce22/tinder"><b>clique aqui</b></a> e prospecte muita gente bonita para os <b>#MeusDoce22</b>! 🔥</p><p>Com amor, <b>Luísa Sonza</b>. 💛</p>`,
+      html: `<p>Olá, <b>${to_user[0].firstname.value}</b>!</p><p>Aqui é a Sonza passando para avisar que você acabou de receber um like de <b>${from_user[0].firstname.value}</b> no Tinder dos <b>#MeusDoce22</b>! ✨</p><p>Para entrar em contato <a href="https://www.instagram.com/${from_user[0].instagram.value}" target="_blank"><b>clique aqui</b></a> para acessar seu <b>Instagram</b> ou envie uma mensagem via <b>Whatsapp</b> <a href="https://api.whatsapp.com/send/?phone=55${from_user[0].phone.value}" target="_blank"><b>clicando aqui</b></a>.</p><p>Crie sua conta agora mesmo no Tinder dos <b>#MeusDoce22</b> <a href="https://jvwasquevite.com/doce22/tinder"><b>clicando aqui</b></a>. 🔥</p><p>Com amor, <b>Luísa Sonza</b>. 💛</p>`,
       subject: `${from_user[0].firstname.value} curtiu você!`,
       from: {
         name: 'Luísa Sonza',
