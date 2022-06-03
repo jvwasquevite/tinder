@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /home/joao/.node/corepack/yarn/1.22.15/bin/yarn.js remove @babel/preset-env @babel/preset-typescript @netlify/functions @types/aws-lambda encoding instagram-scraper-api instagramdp netlify-cli netlify-lambda node-fetch serverless-http
+  /usr/local/bin/node /home/joao/.node/corepack/yarn/1.22.15/bin/yarn.js add node-mailer
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -30,9 +30,7 @@ npm manifest:
       "typescript": "^4.6.4"
     },
     "scripts": {
-      "dev": "ts-node-dev src",
-      "start": "./node_modules/.bin/netlify-lambda serve ts-node-dev src",
-      "build": "./node_modules/.bin/netlify-lambda build ts-node-dev src"
+      "dev": "ts-node-dev src"
     },
     "dependencies": {
       "axios": "^0.27.2",

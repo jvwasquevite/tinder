@@ -25,14 +25,10 @@ class ListGuestsStatsService {
             'Em um relacionamento aberto'
         ).length,
         curled: guests.filter(
-          guest =>
-            guest.status_de_relacionamento.value === 'Enrolado' ||
-            guest.status_de_relacionamento.value === 'Enrolada'
+          guest => guest.status_de_relacionamento.value === 'Enrolado/a'
         ).length,
         single: guests.filter(
-          guest =>
-            guest.status_de_relacionamento.value === 'Solteiro' ||
-            guest.status_de_relacionamento.value === 'Solteira'
+          guest => guest.status_de_relacionamento.value === 'Solteiro/a'
         ).length,
       },
       sexual_orientation: {

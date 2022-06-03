@@ -25,14 +25,10 @@ class ListTinderStatsService {
             'Em um relacionamento aberto'
         ).length,
         curled: users.filter(
-          user =>
-            user.status_de_relacionamento.value === 'Enrolado' ||
-            user.status_de_relacionamento.value === 'Enrolada'
+          user => user.status_de_relacionamento.value === 'Enrolado/a'
         ).length,
         single: users.filter(
-          user =>
-            user.status_de_relacionamento.value === 'Solteiro' ||
-            user.status_de_relacionamento.value === 'Solteira'
+          user => user.status_de_relacionamento.value === 'Solteiro/a'
         ).length,
       },
       sexual_orientation: {

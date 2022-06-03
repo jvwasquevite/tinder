@@ -6,7 +6,7 @@ export async function API() {
      * Get request from Hubspot API
      */
     const { data: response } = await axios.get(
-      'https://api.hubapi.com/contacts/v1/lists/11/contacts/all?hapikey=14ed68c8-fde2-40c2-809d-05d3fbeca83f&count=100&property=firstname&property=genero&property=instagram&property=email&property=photos&property=orientacao_sexual&property=status_de_relacionamento&property=tinder&property=pago',
+      'https://api.hubapi.com/contacts/v1/lists/11/contacts/all?hapikey=14ed68c8-fde2-40c2-809d-05d3fbeca83f&count=250&property=firstname&property=genero&property=phone&property=instagram&property=email&property=photos&property=bio&property=orientacao_sexual&property=status_de_relacionamento&property=tinder&property=lote&property=jobtitle&property=pago',
       {
         headers: {
           'Access-Control-Allow-Origin': '*',
@@ -25,18 +25,10 @@ export async function API() {
        */
       switch (user.status_de_relacionamento.value) {
         case 'solteiro':
-          if (user.genero.value === 'Masculino') {
-            user.status_de_relacionamento.value = 'Solteiro'
-          } else {
-            user.status_de_relacionamento.value = 'Solteira'
-          }
+          user.status_de_relacionamento.value = 'Solteiro/a'
           break
         case 'enrolado':
-          if (user.genero.value === 'Masculino') {
-            user.status_de_relacionamento.value = 'Enrolado'
-          } else {
-            user.status_de_relacionamento.value = 'Enrolada'
-          }
+          user.status_de_relacionamento.value = 'Enrolado/a'
         case 'relacionamento-aberto':
           user.status_de_relacionamento.value = 'Em um relacionamento aberto'
           break
@@ -57,6 +49,10 @@ export async function API() {
       } else {
         user.orientacao_sexual.value = 'Gay'
       }
+
+      // if (user.lote !== undefined) {
+      //   user.lote.value = user.lote.value.slice(2, 4)
+      // }
     })
 
     return data
